@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:provider_simple_counter/common/localization.dart';
 import 'package:provider_simple_counter/data/models/counter.dart';
-import 'package:provider_simple_counter/theme/theme_model.dart';
+
+import '../common/theme/theme_model.dart';
 
 class MyHomePage extends StatelessWidget {
   const MyHomePage({Key? key, required this.title}) : super(key: key);
@@ -18,8 +20,8 @@ class MyHomePage extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
+            Text(
+              Localization.of(context).instruction,
             ),
             Consumer<Counter>(
               builder: (contex, counter, child) => Text(
@@ -29,9 +31,9 @@ class MyHomePage extends StatelessWidget {
             Consumer<ThemeModel>(builder: (context, state, child) {
               return IconButton(
                   onPressed: context.read<ThemeModel>().changeTheme,
-                  icon: context.read<ThemeModel>().isDark
-                      ? const Icon(Icons.nightlight)
-                      : const Icon(Icons.wb_sunny_outlined));
+                  icon: Icon(context.read<ThemeModel>().isDark
+                      ? Icons.sunny
+                      : Icons.nightlight_round));
             }),
           ],
         ),

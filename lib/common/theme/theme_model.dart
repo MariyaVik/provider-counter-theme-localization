@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:provider_simple_counter/theme/theme_dart.dart';
-import 'package:provider_simple_counter/theme/theme_light.dart';
+
+import 'theme_dart.dart';
+import 'theme_light.dart';
 
 class ThemeModel extends ChangeNotifier {
   bool _isDark = false;
