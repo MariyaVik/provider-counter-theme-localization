@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:provider_simple_counter/common/locale_model.dart';
 import 'package:provider_simple_counter/common/localization.dart';
 import 'package:provider_simple_counter/data/models/counter.dart';
 
@@ -35,6 +36,18 @@ class MyHomePage extends StatelessWidget {
                       ? Icons.sunny
                       : Icons.nightlight_round));
             }),
+            DropdownButton<String>(
+              // isExpanded: true,
+              value: context.read<LocaleModel>().currentLocale.languageCode,
+              items: Localization.supportedLocales
+                  .map<DropdownMenuItem<String>>((e) {
+                return DropdownMenuItem(
+                    value: e.languageCode, child: Text(e.languageCode));
+              }).toList(),
+              onChanged: ((value) {
+                context.read<LocaleModel>().changeLocale(value);
+              }),
+            )
           ],
         ),
       ),

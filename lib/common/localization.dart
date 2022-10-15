@@ -4,8 +4,9 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 class Localization {
   static const en = Locale('en');
   static const ru = Locale('ru');
+  static const es = Locale('es');
 
-  static const supportedLocales = [en, ru];
+  static const supportedLocales = [en, ru, es];
 
   static LocalizationsDelegate<AppLocalizations> get delegate =>
       AppLocalizations.delegate;
