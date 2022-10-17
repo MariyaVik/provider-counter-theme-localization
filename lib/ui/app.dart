@@ -7,7 +7,7 @@ import 'package:provider_simple_counter/data/models/counter.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 import '../common/theme/theme_model.dart';
-import 'home.dart';
+import 'navigation.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
@@ -32,7 +32,8 @@ class MyApp extends StatelessWidget {
           locale: context.watch<LocaleModel>().currentLocale,
           title: 'Flutter Demo',
           theme: state.theme,
-          home: const MyHomePage(title: 'Provider'),
+          initialRoute: Navigation.initialRoute,
+          onGenerateRoute: Navigation.onGenerateRoute,
         );
       }),
     );

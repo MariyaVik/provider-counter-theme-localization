@@ -5,8 +5,8 @@ class LocaleModel extends ChangeNotifier {
   Locale _currentLocale = Localization.ru;
   Locale get currentLocale => _currentLocale;
 
-  changeLocale(String? newLocale) {
-    if (newLocale != null) _currentLocale = Locale(newLocale);
+  changeLocale(Locale newLocale) {
+    _currentLocale = newLocale;
     notifyListeners();
   }
 }

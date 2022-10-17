@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:provider_simple_counter/common/locale_model.dart';
 import 'package:provider_simple_counter/common/localization.dart';
 import 'package:provider_simple_counter/data/models/counter.dart';
 
 import '../common/theme/theme_model.dart';
+import 'navigation.dart';
 
-class MyHomePage extends StatelessWidget {
-  const MyHomePage({Key? key, required this.title}) : super(key: key);
+class HomeScreen extends StatelessWidget {
+  const HomeScreen({Key? key, required this.title}) : super(key: key);
 
   final String title;
 
@@ -21,16 +21,21 @@ class MyHomePage extends StatelessWidget {
                 ? Icons.sunny
                 : Icons.nightlight_round));
       }),
-      DropdownButton<String>(
-        value: context.read<LocaleModel>().currentLocale.languageCode,
-        items: Localization.supportedLocales.map<DropdownMenuItem<String>>((e) {
-          return DropdownMenuItem(
-              value: e.languageCode, child: Text(e.languageCode));
-        }).toList(),
-        onChanged: ((value) {
-          context.read<LocaleModel>().changeLocale(value);
-        }),
-      )
+      IconButton(
+          onPressed: () {
+            Navigator.of(context).pushNamed(NavRouteName.languages);
+          },
+          icon: const Icon(Icons.language))
+      // DropdownButton<String>(
+      //   value: context.read<LocaleModel>().currentLocale.languageCode,
+      //   items: Localization.supportedLocales.map<DropdownMenuItem<String>>((e) {
+      //     return DropdownMenuItem(
+      //         value: e.languageCode, child: Text(e.languageCode));
+      //   }).toList(),
+      //   onChanged: ((value) {
+      //     context.read<LocaleModel>().changeLocale(value);
+      //   }),
+      // )
     ];
     return Scaffold(
       appBar: AppBar(
@@ -79,10 +84,12 @@ class _ActivitiesWidget extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceAround,
       children: [
         FloatingActionButton(
+          heroTag: null,
           onPressed: context.read<Counter>().increment,
           child: const Icon(Icons.add),
         ),
         FloatingActionButton(
+          heroTag: null,
           onPressed: context.read<Counter>().decrement,
           child: const Icon(Icons.remove),
         ),
