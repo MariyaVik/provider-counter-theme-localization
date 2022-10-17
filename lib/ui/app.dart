@@ -21,6 +21,7 @@ class MyApp extends StatelessWidget {
       ],
       child: Consumer<ThemeModel>(builder: (context, state, child) {
         return MaterialApp(
+          debugShowCheckedModeBanner: false,
           localizationsDelegates: const [
             AppLocalizations.delegate,
             GlobalMaterialLocalizations.delegate,
