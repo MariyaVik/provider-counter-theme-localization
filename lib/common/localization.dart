@@ -5,8 +5,9 @@ class Localization {
   static const en = Locale('en');
   static const ru = Locale('ru');
   static const es = Locale('es');
+  static const ar = Locale('ar');
 
-  static const supportedLocales = [en, ru, es];
+  static const supportedLocales = [en, ru, es, ar];
 
   static LocalizationsDelegate<AppLocalizations> get delegate =>
       AppLocalizations.delegate;
