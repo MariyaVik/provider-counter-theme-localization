@@ -26,16 +26,6 @@ class HomeScreen extends StatelessWidget {
             Navigator.of(context).pushNamed(NavRouteName.languages);
           },
           icon: const Icon(Icons.language))
-      // DropdownButton<String>(
-      //   value: context.read<LocaleModel>().currentLocale.languageCode,
-      //   items: Localization.supportedLocales.map<DropdownMenuItem<String>>((e) {
-      //     return DropdownMenuItem(
-      //         value: e.languageCode, child: Text(e.languageCode));
-      //   }).toList(),
-      //   onChanged: ((value) {
-      //     context.read<LocaleModel>().changeLocale(value);
-      //   }),
-      // )
     ];
     return Scaffold(
       appBar: AppBar(
@@ -85,13 +75,13 @@ class _ActivitiesWidget extends StatelessWidget {
       children: [
         FloatingActionButton(
           heroTag: null,
-          onPressed: context.read<Counter>().increment,
-          child: const Icon(Icons.add),
+          onPressed: context.read<Counter>().decrement,
+          child: const Icon(Icons.remove),
         ),
         FloatingActionButton(
           heroTag: null,
-          onPressed: context.read<Counter>().decrement,
-          child: const Icon(Icons.remove),
+          onPressed: context.read<Counter>().increment,
+          child: const Icon(Icons.add),
         ),
       ],
     );
