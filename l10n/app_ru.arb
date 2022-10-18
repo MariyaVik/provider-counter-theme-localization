@@ -1,1 +1,3 @@
-{"instruction" : "Нажимай на кнопку:"}
+{"instruction" : "Нажимай на кнопку:",
+"language": "Русский",
+"language_en": "Russian"}
