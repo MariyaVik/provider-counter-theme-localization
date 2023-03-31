@@ -31,7 +31,7 @@ class HomeScreen extends StatelessWidget {
       ),
       body: Center(
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: const <Widget>[
             _PresentationWidget(),
             _ActivitiesWidget(),
@@ -51,10 +51,13 @@ class _PresentationWidget extends StatelessWidget {
       children: [
         Text(
           Localization.of(context).instruction,
+          style: Theme.of(context).textTheme.headlineMedium,
         ),
+        const SizedBox(height: 16),
         Consumer<Counter>(
           builder: (contex, counter, child) => Text(
             counter.count.toString(),
+            style: Theme.of(context).textTheme.headlineLarge,
           ),
         ),
       ],
