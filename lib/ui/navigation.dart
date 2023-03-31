@@ -14,8 +14,7 @@ class Navigation {
   static Route<dynamic> onGenerateRoute(RouteSettings settings) {
     switch (settings.name) {
       case NavRouteName.home:
-        return MaterialPageRoute(
-            builder: (context) => const HomeScreen(title: 'Provider'));
+        return MaterialPageRoute(builder: (context) => const HomeScreen());
       case NavRouteName.languages:
         return MaterialPageRoute(builder: (context) => const LanguageScreen());
 

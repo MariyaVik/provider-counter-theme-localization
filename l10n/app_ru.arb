@@ -1,3 +1,5 @@
-{"instruction" : "Нажимай на кнопку:",
+{"title": "Учебное приложение",
+    "instruction" : "Нажимай на кнопку:",
+"select": "Выберите язык",
 "language": "Русский",
 "language_en": "Russian"}

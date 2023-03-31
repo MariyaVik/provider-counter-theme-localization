@@ -1,3 +1,5 @@
-{"instruction" : "Presiona el botón:",
+{"title": "Aplicación Educativa",
+"instruction" : "Presiona el botón:",
+"select": "Elige lengua",
 "language": "Español",
 "language_en": "Spanish"}

@@ -1,15 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:provider_simple_counter/common/localization.dart';
-import 'package:provider_simple_counter/data/models/counter.dart';
-
-import '../common/theme/theme_model.dart';
+import '../common/localization.dart';
+import '../data/models/counter.dart';
 import 'navigation.dart';
+import 'theme/theme_model.dart';
 
 class HomeScreen extends StatelessWidget {
-  const HomeScreen({Key? key, required this.title}) : super(key: key);
-
-  final String title;
+  const HomeScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +26,7 @@ class HomeScreen extends StatelessWidget {
     ];
     return Scaffold(
       appBar: AppBar(
-        title: Text(title),
+        title: Text(Localization.of(context).title),
         actions: settingButtons,
       ),
       body: Center(

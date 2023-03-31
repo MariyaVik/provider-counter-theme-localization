@@ -1,3 +1,5 @@
-{"instruction" : ":انقر فوق الزر",
+{"title": "تطبيق تعليمي",
+"instruction" : ":انقر فوق الزر",
+"select": "اختر اللغة",
 "language": "عرب",
 "language_en": "Arabic"}

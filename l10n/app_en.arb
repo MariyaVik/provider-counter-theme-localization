@@ -1,4 +1,6 @@
-{"instruction" : "You have pushed the button this many times:",
+{"title": "Educational App",
+"instruction" : "You have pushed the button this many times:",
+"select": "Choose language",
 "language": "English",
 "language_en": "English"
 }

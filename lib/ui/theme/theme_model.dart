@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'theme_dart.dart';
+import 'theme_dark.dart';
 import 'theme_light.dart';
 
 class ThemeModel extends ChangeNotifier {

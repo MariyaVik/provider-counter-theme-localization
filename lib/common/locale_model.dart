@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:provider_simple_counter/common/localization.dart';
+
+import 'localization.dart';
 
 class LocaleModel extends ChangeNotifier {
   Locale _currentLocale = Localization.ru;
